@@ -28,7 +28,7 @@ CREATE TABLE beer (
     "name" VARCHAR(100) NOT NULL,
     "description" TEXT,
     abv FLOAT NOT NULL,
-    price INT NOT NULL,
+    price DECIMAL NOT NULL,
     id_brewery INT NOT NULL,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
