@@ -2,6 +2,7 @@ import express, {Application} from 'express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { router as beersRoute } from "./routes/beersRoute";
+import { router as brewerysRoute } from "./routes/brewerysRoute";
 
 // Configuration de Typescript pour une application Express
 const app: Application=express();
@@ -39,5 +40,6 @@ app.get("/", (req, res) => {
 
 // Routes de l'API
 app.use(`${path}/beers`, beersRoute);
+app.use(`${path}/brewerys`, brewerysRoute)
 
 export default app;
