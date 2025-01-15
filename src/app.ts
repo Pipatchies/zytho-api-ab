@@ -13,6 +13,12 @@ setupSwagger(app);
 // Middleware pour parser le corps des requêtes en JSON
 app.use(express.json());
 
+// Importation de cors
+const cors = require('cors');
+
+// Permet les requêtes de toutes les origines
+app.use(cors());
+
 // Configuration de la route de base de l'API
 const version = "v1";
 const path =`/api/${version}`;
