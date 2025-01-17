@@ -28,6 +28,22 @@ export const photosController = {
         }
     },
 
+    // Controlleur pour récupérer les photos d'une bière par son ID
+    getByBeerId: async (req: Request, res: Response): Promise<void> => {
+        try {
+            const beerId = parseInt(req.query.beerId as string, 10);
+            const photos: PhotoResBody[] = await photosModel.getByBeerId(beerId);
+            if (!photos || photos.length === 0) {
+                res.status(404).json({ message: `Aucune photo trouvée pour la bière avec l'ID ${beerId}.` });
+                return;
+            }
+            res.status(200).json(photos); 
+        } catch (error) {
+            res.status(500).json({ message: (error instanceof Error ? error.message : "Erreur serveur") });
+        }
+    },
+    
+
     // Controlleur pour créer une nouvelle photo
     post: async (req: Request, res: Response): Promise<void> => {
     const newPhoto: PhotoReqBody = req.body

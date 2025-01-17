@@ -25,6 +25,17 @@ getByID: async (id:number): Promise<PhotoResBody[]> => {
     }
 },
 
+getByBeerId: async (beerId: number): Promise<PhotoResBody[]> => {
+    try {
+        const idBeerPhotoQuery = "SELECT * FROM photo WHERE id_beer = $1";
+        const { rows } = await pool.query(idBeerPhotoQuery, [beerId]);
+        return rows;
+    } catch (error) {
+        throw new Error("❌ Erreur lors de la récupération des photos pour cette bière");
+    }
+},
+
+
 // Création d'une nouvelle photo
 post: async (photo: PhotoReqBody): Promise<PhotoResBody> => {
     // Validation des données fournies par l'utilisateur

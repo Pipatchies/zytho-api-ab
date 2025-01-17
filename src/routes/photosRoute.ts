@@ -82,6 +82,36 @@ router.get("/:id", photosController.getByID);
 
 /**
  * @swagger
+ * /photos/byBeer/{id}:
+ *   get:
+ *     summary: Récupérer les photos associées à une bière spécifique par son ID
+ *     tags: [Photos]
+ *     parameters:
+ *       - in: query
+ *         name: beerId
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: L'ID de la bière pour laquelle récupérer les photos
+ *     responses:
+ *       200:
+ *         description: Liste des photos associées à la bière
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/PhotoResponseBody'
+ *       400:
+ *         description: L'ID de la bière est manquant ou invalide
+ *       500:
+ *         description: Erreur serveur
+ */
+router.get("/byBeer/:id", photosController.getByBeerId);
+
+
+/**
+ * @swagger
  * /photos/{id}:
  *   put:
  *     summary: Mettre à jour une photo par ID
