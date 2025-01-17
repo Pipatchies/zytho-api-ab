@@ -123,6 +123,57 @@ const options = {
                   },
                 },
               },
+              PhotoRequestBody: {
+                type: "object",
+                required: ["url", "date_uploaded","id_beer"],
+                properties: {
+                  url: {
+                    type: "string",
+                    description: "URL de la photo",
+                  },
+                  date_uploaded: {
+                    type: "string",
+                    format: "date-time",
+                    description: "Date où la photo a été téléchargée",
+                  },
+                  id_beer: {
+                    type: "integer",
+                    description: "ID de la bière associée",
+                  },
+                },
+              },
+              PhotoResponseBody: {
+                type: "object",
+                properties: {
+                  id_photo: {
+                    type: "integer",
+                    description: "ID unique de la photo",
+                  },
+                  url: {
+                    type: "string",
+                    description: "URL de la photo",
+                  },
+                    date_uploaded: {
+                      type: "string",
+                      format: "date-time",
+                      description: "Date où la photo a été téléchargée",
+                    },
+                    id_beer: {
+                      type: "integer",
+                      description: "ID de la bière associée",
+                    },
+                  created_at: {
+                    type: "string",
+                    format: "date-time",
+                    description: "Date de création de la photo",
+                  },
+                  updated_at: {
+                    type: "string",
+                    format: "date-time",
+                    description: "Date de dernière modification de la photo",
+                  },
+                },
+              },
             },
           },          
         },

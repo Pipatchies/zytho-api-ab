@@ -70,7 +70,7 @@ CREATE TABLE favorite(
 
 -- Ajout de la table photos
 
-CREATE TABLE photos(
+CREATE TABLE photo(
     id SERIAL PRIMARY KEY,
     "url" VARCHAR(1000) NOT NULL,
     date_uploaded TIMESTAMP NOT NULL,
@@ -225,7 +225,7 @@ VALUES
 ('2024-11-06 20:00:00', 3, 2);
 
 -- Insertion de données dans la table photos
-INSERT INTO photos ("url", date_uploaded, id_beer)
+INSERT INTO photo ("url", date_uploaded, id_beer)
 VALUES
 ('https://static.unepetitemousse.fr/produits/bieres/brewdog/brewdog-PunkIPA-2021_1800w.jpg', '2024-11-01 10:30:00', 1),
 ('https://media.carrefour.fr/medias/67306fad6af7473b958737c5e5bd81dc/p_1500x1500/00723830000100_H1N1_s00.png', '2024-11-02 16:30:00', 2),

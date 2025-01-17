@@ -1,6 +1,7 @@
 import express, {Application} from 'express';
 import { router as beersRoute } from "./routes/beersRoute";
 import { router as brewerysRoute } from "./routes/brewerysRoute";
+import { router as photosRoute } from "./routes/photosRoute";
 import { setupSwagger } from './swagger';
 
 
@@ -31,5 +32,6 @@ app.get("/", (req, res) => {
 // Routes de l'API
 app.use(`${path}/beers`, beersRoute);
 app.use(`${path}/brewerys`, brewerysRoute)
+app.use(`${path}/photos`, photosRoute)
 
 export default app;
