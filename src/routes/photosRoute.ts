@@ -87,8 +87,8 @@ router.get("/:id", photosController.getByID);
  *     summary: Récupérer les photos associées à une bière spécifique par son ID
  *     tags: [Photos]
  *     parameters:
- *       - in: query
- *         name: beerId
+ *       - in: path
+ *         name: id
  *         schema:
  *           type: integer
  *         required: true

@@ -31,7 +31,7 @@ export const photosController = {
     // Controlleur pour récupérer les photos d'une bière par son ID
     getByBeerId: async (req: Request, res: Response): Promise<void> => {
         try {
-            const beerId = parseInt(req.query.beerId as string, 10);
+          const beerId = parseInt(req.params.id, 10);
             const photos: PhotoResBody[] = await photosModel.getByBeerId(beerId);
             if (!photos || photos.length === 0) {
                 res.status(404).json({ message: `Aucune photo trouvée pour la bière avec l'ID ${beerId}.` });
