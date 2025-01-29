@@ -227,18 +227,18 @@ VALUES
 -- Insertion de données dans la table photos
 INSERT INTO photo ("url", date_uploaded, id_beer)
 VALUES
-('https://static.unepetitemousse.fr/produits/bieres/brewdog/brewdog-PunkIPA-2021_1800w.jpg', '2024-11-01 10:30:00', 1),
+('https://unepetitemousse.fr/media/cache/sylius_shop_product_original/39/4e/abd472e2ac40151828e7ab682749.png', '2024-11-01 10:30:00', 1),
 ('https://media.carrefour.fr/medias/67306fad6af7473b958737c5e5bd81dc/p_1500x1500/00723830000100_H1N1_s00.png', '2024-11-02 16:30:00', 2),
 ('https://bieronomy.com/25829-large_default/dupont-saison-dupont-33-cl.jpg', '2024-11-03 19:30:00', 3),
-('https://www.brewdog.com/media/39849/hazy-jane-ipa.jpg', '2024-11-11 09:30:00', 4),
-('https://www.lagunitas.com/sites/default/files/styles/product_full/public/ipa_maximus.jpg?itok=UbnjOZ7Z', '2024-11-12 14:20:00', 5), 
-('https://www.brasserie-dupont.com/produits/la-chouffe.jpg', '2024-11-13 16:50:00', 6), 
-('https://www.brewdog.com/media/38122/dead-pony-club-ipa-500ml-1.jpg', '2024-11-05 14:00:00', 7), 
-('https://www.brewdog.com/media/39384/elvis-juice-ipa.jpg', '2024-11-06 11:15:00', 8),  
-('https://www.lagunitas.com/sites/default/files/styles/product_full/public/lagunitas-ipa.png?itok=QyqGTqEd', '2024-11-07 09:20:00', 9),  
-('https://www.lagunitas.com/sites/default/files/styles/product_full/public/little-sumpin-sumpin-ale.jpg?itok=w9k8PLMK', '2024-11-08 13:30:00', 10),  
-('https://www.biere-metier.com/produits/meteor-pilsner.jpg', '2024-11-09 17:45:00', 11),  
-('https://brasserie-dupont.com/produits/biere-de-noel.jpg', '2024-11-10 12:10:00', 12);  
+('https://unepetitemousse.fr/media/cache/sylius_shop_product_original/dc/40/bea0f40eb7a1cb8b0c00b74362e7.jpg', '2024-11-11 09:30:00', 4),
+('https://www.cdiscount.com/pdt2/m/a/x/1/700x700/lagunitasmax/rw/lagunitas-maximus-biere-ambree-35-5-cl.jpg', '2024-11-12 14:20:00', 5), 
+('https://festicave.com/media/catalog/product/cache/f5b7ba22dfec99b343160e659a8fca9c/1/5/1565692729180.webp', '2024-11-13 16:50:00', 6), 
+('https://www.drinks-explorer.com/655-large_default/biere-brewdog-dead-pony-pale-ale.jpg', '2024-11-05 14:00:00', 7), 
+('https://www.vandb.fr/media/cache/attachment/filter/vandb_b2c_product_gallery_main/3a22818443086ba533d3a730ffa7d18b/829434/673f96adb4d3c236263509.png', '2024-11-06 11:15:00', 8),  
+('https://media.carrefour.fr/medias/67306fad6af7473b958737c5e5bd81dc/p_1500x1500/00723830000100_H1N1_s00.png', '2024-11-07 09:20:00', 9),  
+('https://cdn.auchan.fr/media/MEDIASTEP85295172_2048x2048/B2CD/?format=rw&quality=75&width=1200&height=1200', '2024-11-08 13:30:00', 10),  
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmamHorL--yVpdc-kb-W5m1DdSyrAt4WmwIQ&s', '2024-11-09 17:45:00', 11),  
+('https://www.drinks-explorer.com/993-large_default/biere-avec-les-bons-voeux-75-cl.jpg', '2024-11-10 12:10:00', 12);  
 
 -- Insertion de données dans la table category
 INSERT INTO category ("name", flavor)
