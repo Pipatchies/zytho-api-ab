@@ -15,7 +15,7 @@ get: async (): Promise<PhotoResBody[]> => {
 },
 
 // Récupération d'une seule photo par son ID
-getByID: async (id:number): Promise<PhotoResBody[]> => {
+getByID: async (id:number): Promise<PhotoResBody | null> => {
     try {
         const idphotoQuery = "SELECT * FROM photo WHERE id = $1"
         const { rows } = await pool.query(idphotoQuery, [id])

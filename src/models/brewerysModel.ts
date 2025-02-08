@@ -14,7 +14,7 @@ get: async (): Promise<BreweryResBody[]> => {
 },
 
 // Récupération d'une seule brasserie par son ID
-getByID: async (id:number): Promise<BreweryResBody[]> => {
+getByID: async (id:number): Promise<BreweryResBody | null> => {
     try {
         const idbreweryQuery = "SELECT * FROM brewery WHERE id = $1"
         const { rows } = await pool.query(idbreweryQuery, [id])

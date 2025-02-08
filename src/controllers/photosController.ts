@@ -17,7 +17,7 @@ export const photosController = {
     getByID: async (req: Request, res: Response): Promise<void> => {
         try {
             const photoId = parseInt(req.params.id, 10);
-            const photo: PhotoResBody[] = await photosModel.getByID(photoId);
+            const photo: PhotoResBody | null = await photosModel.getByID(photoId);
             if (!photo) {
                 res.status(404).json({ message: `Aucune photo trouvée avec l'ID ${photoId}.` });
                 return;

@@ -17,7 +17,7 @@ export const brewerysController = {
     getByID: async (req: Request, res: Response): Promise<void> => {
         try {
             const breweryId = parseInt(req.params.id, 10);
-            const brewery: BreweryResBody[] = await brewerysModel.getByID(breweryId);
+            const brewery: BreweryResBody | null = await brewerysModel.getByID(breweryId);
             if (!brewery) {
                 res.status(404).json({ message: `Aucune brasserie trouvée avec l'ID ${breweryId}.` });
                 return;

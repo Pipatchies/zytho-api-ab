@@ -17,7 +17,7 @@ export const beersController = {
     getByID: async (req: Request, res: Response): Promise<void> => {
         try {
             const beerId = parseInt(req.params.id, 10);
-            const beer: BeerResBody[] = await beersModel.getByID(beerId);
+            const beer: BeerResBody | null = await beersModel.getByID(beerId);
             if (!beer) {
                 res.status(404).json({ message: `Aucune bière trouvée avec l'ID ${beerId}.` });
                 return;
