@@ -6,14 +6,14 @@ export const ingredientBeerModel = {
         try {
             const allIngredientOfBeerQuery = `
                 SELECT 
-                    ib.id_ingredient,  -- Ajout de l'ID de l'ingrédient
+                    ib.id_ingredient, 
                     i."name" AS ingredient_name,
                     i."type" AS ingredient_type,
                     ib.pourcent AS ingredient_percentage
                 FROM
                     ingredient_beer ib
                 JOIN
-                    ingredient i ON i.id = ib.id_ingredient
+                    ingredient i ON ib.id_ingredient = i.id
                 WHERE
                     ib.id_beer = $1;
             `;

@@ -14,7 +14,7 @@ export const ingredientBeerController = {
                 return;
             }
 
-            res.status(200).json({ ingredients });
+            res.status(200).json(ingredients);
         } catch (error) {
             res.status(500).json({ message: error instanceof Error ? error.message : "Erreur serveur" });
         }
