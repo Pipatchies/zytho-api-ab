@@ -7,7 +7,6 @@ get: async (): Promise<PhotoResBody[]> => {
     try {
         const allPhotosQuery = "SELECT * FROM photo";
         const { rows } = await pool.query(allPhotosQuery);
-        console.log("Photos fetched successfully:", rows);
         return rows;   
     } catch (error) {
         throw new Error ("❌ Erreur lors de la récupération des photos");
