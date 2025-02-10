@@ -2,6 +2,7 @@ import express, {Application} from 'express';
 import { router as beersRoute } from "./routes/beersRoute";
 import { router as brewerysRoute } from "./routes/brewerysRoute";
 import { router as photosRoute } from "./routes/photosRoute";
+import { router as ingredientBeerRoute } from "./routes/ingredientBeerRoute"
 import { setupSwagger } from './swagger';
 
 
@@ -33,5 +34,6 @@ app.get("/", (req, res) => {
 app.use(`${path}/beers`, beersRoute);
 app.use(`${path}/brewerys`, brewerysRoute)
 app.use(`${path}/photos`, photosRoute)
+app.use(`${path}/ingredients`, ingredientBeerRoute)
 
 export default app;

@@ -174,6 +174,23 @@ const options = {
                   },
                 },
               },
+              IngredientBeerResponseBody: {
+                type: "object",
+                properties: {
+                  ingredient_name: {
+                    type: "string",
+                    description: "Nom de l'ingrédient",
+                  },
+                  ingredient_type: {
+                    type: "string",
+                    description: "Type de l'ingrédient",
+                  },
+                  ingredient_percentage: {
+                    type: "number",
+                    description: "Pourcentage de l'ingrédient dans la bière",
+                  },
+                },
+              },
             },
           },          
         },
