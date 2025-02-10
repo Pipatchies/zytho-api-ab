@@ -2,7 +2,7 @@
     "watch": ["src", "config"],
     "ext": "ts,js,json",
     "ignore": ["node_modules"],
-    "exec": "ts-node src/serveur.ts",
+    "exec": "ts-node src/server.ts",
     "legacyWatch": true,
     "pollingInterval": 1000
   }
