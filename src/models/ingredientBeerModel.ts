@@ -6,17 +6,16 @@ export const ingredientBeerModel = {
         try {
             const allIngredientOfBeerQuery = `
                 SELECT 
+                    ib.id_ingredient,  -- Ajout de l'ID de l'ingrédient
                     i."name" AS ingredient_name,
                     i."type" AS ingredient_type,
                     ib.pourcent AS ingredient_percentage
                 FROM
-                    beer b
-                JOIN 
-                    ingredient_beer ib ON b.id = ib.id_beer
+                    ingredient_beer ib
                 JOIN
                     ingredient i ON i.id = ib.id_ingredient
                 WHERE
-                    b.id = $1;
+                    ib.id_beer = $1;
             `;
             const { rows } = await pool.query(allIngredientOfBeerQuery, [beerId]);
             return rows; 
