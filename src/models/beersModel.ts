@@ -8,7 +8,7 @@ get: async (): Promise<BeerResBody[]> => {
     try {
         const allBeersQuery = "SELECT * FROM beer";
         const { rows } = await pool.query(allBeersQuery);
-        return rows;   
+        return rows[0];   
     } catch (error) {
         throw new Error ("❌ Erreur lors de la récupération des bières");
     }
