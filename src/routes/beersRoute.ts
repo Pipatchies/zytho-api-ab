@@ -82,6 +82,35 @@ router.get("/:id", beersController.getByID);
 
 /**
  * @swagger
+ * /beers/brewery/{breweryId}:
+ *   get:
+ *     summary: Récupérer les bières d'une brasserie par ID
+ *     tags: [Beers]
+ *     parameters:
+ *       - in: path
+ *         name: breweryId
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: L'ID de la brasserie
+ *     responses:
+ *       200:
+ *         description: Liste des bières de la brasserie
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/BeerResponseBody'
+ *       404:
+ *         description: Aucune bière trouvée pour cette brasserie
+ *       500:
+ *         description: Erreur serveur
+ */
+router.get("/brewery/:breweryId", beersController.getByBrewery);
+
+/**
+ * @swagger
  * /beers/{id}:
  *   put:
  *     summary: Mettre à jour une bière par ID
