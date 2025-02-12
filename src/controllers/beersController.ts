@@ -28,6 +28,21 @@ export const beersController = {
         }
     },
 
+    // Controlleur pour récupérer les bières d'une brasserie par son ID
+    getByBrewery: async (req: Request, res: Response): Promise<void> => {
+        const breweryId = parseInt(req.params.breweryId, 10);
+        try {
+            const beers: BeerResBody[] = await beersModel.getByBrewery(breweryId);
+            if (beers.length === 0) {
+                res.status(404).json({ message: `Aucune bière trouvée pour la brasserie avec l'ID ${breweryId}.` });
+                return;
+            }
+            res.status(200).json(beers);
+        } catch (error) {
+            res.status(500).json({ message: (error instanceof Error ? error.message : "Erreur serveur") });
+        }
+    },
+
     // Controlleur pour créer une nouvelle bière
     post: async (req: Request, res: Response): Promise<void> => {
     const newBeer: BeerReqBody = req.body

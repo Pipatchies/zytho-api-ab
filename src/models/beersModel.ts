@@ -19,9 +19,20 @@ getByID: async (id:number): Promise<BeerResBody | null> => {
     try {
         const idBeerQuery = "SELECT * FROM beer WHERE id = $1"
         const { rows } = await pool.query(idBeerQuery, [id])
-        return rows[0]
+        return rows[0];
     } catch (error) {
         throw new Error ("❌ Erreur lors de la récupération de la bière par ID");  
+    }
+},
+
+// Récupération des bières par ID de brasserie (nouvelle requête)
+getByBrewery: async (breweryId: number): Promise<BeerResBody[]> => {
+    try {
+        const beersByBreweryQuery = "SELECT * FROM beer WHERE id_brewery = $1";
+        const { rows } = await pool.query(beersByBreweryQuery, [breweryId]);
+        return rows;
+    } catch (error) {
+        throw new Error("❌ Erreur lors de la récupération des bières de la brasserie");
     }
 },
 
