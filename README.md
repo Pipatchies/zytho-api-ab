@@ -1,4 +1,4 @@
-# API pour l'application zythologe - Pour les amateurs de bières !
+# 🍻 API pour l'application zythologe - Pour les amateurs de bières !
 
 ## Contexte du Projet
 
